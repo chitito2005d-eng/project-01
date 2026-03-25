@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disculpa Mi Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffe6e6, #ffb3b3);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+        .image-section {
+            display: none;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+        .image-section:target {
+            display: block;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .message {
+            font-style: italic;
+            color: #d6336c;
+            margin-top: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #ffe6e6;
+            margin: 5% auto;
+            padding: 20px;
+            border: 4px solid #d6336c;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 8px 8px 0px #000000;
+            border-radius: 10px;
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .modal-content p {
+            font-size: 1.2em;
+            color: #d6336c;
+            margin-bottom: 20px;
+        }
+        .close {
+            color: #d6336c;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Disculpa Mi Amor ❤️</h1>
+    <p>Mi vida, mi razón de ser, sé que te he hecho daño y me arrepiento profundamente de cada palabra o acción que te haya lastimado. Eres lo más importante en mi mundo, la luz que ilumina mis días, y no quiero perderte por nada del mundo. Por favor, perdóname con todo tu corazón, porque sin ti mi vida no tiene sentido.</p>
+    <p>Desde el primer momento en que te conocí, supe que eras especial. Tu sonrisa, tu risa, tu forma de ver el mundo... todo en ti me enamora cada día más. He cometido errores, lo sé, pero te prometo que estoy dispuesto a cambiar, a ser mejor por ti y para ti. Presiona los botones para ver algunos recuerdos que me inspiran a ser mejor por ti, recuerdos que me recuerdan lo hermoso que es nuestro amor.</p>
+    
+    <button class="button" onclick="showModal('653487238_1443197880546112_3653642872150431495_n.jpg', '¡Oh, mi amor! Mira cómo estamos felices juntos en esta foto. Estos momentos son mi mayor tesoro, y tu sonrisa ilumina mi mundo entero. Perdóname por cualquier tristeza que haya causado, porque prometo llenar tu vida de alegría infinita. Te amo con todo mi corazón, mi reina adorada.')">Recuerdo Feliz</button>
+    <button class="button" onclick="showModal('655202345_974099324989718_8223605061912119824_n.jpg', 'Cada sonrisa tuya es un rayo de sol que ilumina mi día y llena mi alma de paz. En este momento especial, veo lo maravillosa que eres y lo afortunado que soy de tenerte. Te amo más que a nada en este mundo, y prometo hacerte feliz cada día de mi vida. Perdóname por mis errores, y acepta mi amor eterno.')">Momento Especial</button>
+    <button class="button" onclick="showModal('656695457_1606499980620833_8028503064654368039_n.jpg', 'Al ver esta foto, me inspiro en nuestro amor tan profundo, en la fuerza increíble que tenemos juntos, y en el futuro brillante que construiremos. Tú eres mi musa divina, mi inspiración diaria, y sin ti nada tiene sentido. Perdóname, mi amor eterno, y sigamos adelante, más fuertes que nunca, porque juntos somos invencibles. Tu belleza y bondad me motivan a ser mejor cada día.')">Inspiración</button>
+    <button class="button" onclick="showModal('chompas.jpg', 'Mira cómo siempre combinamos con nuestras chompas que compartíamos de nuestra generación, reflejando nuestra conexión perfecta y armoniosa. Cada prenda que llevamos juntos me recuerda lo mucho que somos uno, en estilo y en amor. Perdóname por cualquier frialdad que haya traído, y prometo mantenernos siempre abrigados en el calor de nuestro cariño eterno. Eres mi complemento perfecto, mi amor.')">Nosotros Combinando Siempre</button>
+    <button class="button" onclick="showModal('cuando_eramos_amigos.jpg', 'Recuerda cuando éramos solo amigos, riendo y compartiendo secretos bajo el sol radiante. Aquellos días inocentes forjaron los cimientos de nuestro amor profundo y verdadero. Perdóname si alguna vez olvidé esa amistad pura, porque ahora sé que eres mi amiga, mi amante, mi todo absoluto. Te amo con toda mi alma, y juntos construiremos un futuro maravilloso.')">Cuando Éramos Amigos</button>
+    <button class="button" onclick="showModal('el_dia_que_te_pedi_ser_mi_novia.jpg', 'Ese día mágico cuando te pedí ser mi novia, mi corazón latía con esperanza y alegría pura. Tu sí fue el regalo más preciado, el comienzo de nuestra historia de amor apasionada. Perdóname por cualquier sombra que haya nublado nuestra luz, y renovemos nuestros votos de amor eterno, porque eres la reina de mi corazón. Te adoro más que a las estrellas del cielo.')">El Día que Te Pedí Ser Mi Novia</button>
+    <button class="button" onclick="showModal('en_el_colegio.png', 'En el colegio, entre libros y risas contagiosas, compartíamos sueños y aventuras inolvidables. Aquellos años nos unieron de una manera especial, creando lazos que el tiempo solo ha fortalecido. Perdóname por cualquier error juvenil, mi amor, porque hoy te prometo ser el compañero perfecto en nuestro viaje juntos. Tu inteligencia y dulzura me enamoran más cada día.')">En el Colegio</button>
+    <button class="button" onclick="showModal('graduacion.jpg', 'Mirando esta foto de nuestra graduación, recuerdo lo orgulloso que estoy de ti, mi amor. Brillaste tanto ese día, y cada logro tuyo me llena de alegría inmensa. Perdóname si no te apoyé lo suficiente, pero ahora quiero celebrar contigo todos tus triunfos. Eres mi estrella brillante, mi todo.')">Graduación</button>
+    <button class="button" onclick="showModal('graduacion2.jpg', 'Otra hermosa foto de nuestra graduación, donde nuestros sueños se hicieron realidad juntos. Juntos somos imparables, mi vida preciosa. Perdóname por cualquier duda, porque te amo y admiro cada paso que das. Eres mi razón de ser, mi amor incomparable.')">Nuestra Graduación</button>
+    <button class="button" onclick="showModal('mascarillas.jpg', 'Mira esta foto de nosotros con mascarillas para la cara, riendo y divirtiéndonos juntos. Esos momentos de alegría pura nos unieron más, enseñándonos a valorar cada instante feliz. Perdóname por no apreciar lo suficiente entonces, mi vida, porque ahora sé que eres mi escudo y mi refugio eterno. Tu presencia me salva, mi ángel guardián.')">Mascarillas</button> 
+    <button class="button" onclick="showModal('nosotros_pequeños.jpg', 'Mirándonos en esta foto de cuando éramos pequeños, veo las semillas de nuestro amor plantadas desde el inicio. Inocentes y puros, crecimos juntos hacia este sentimiento profundo. Perdóname por cualquier olvido de nuestras raíces, porque tú eres mi pasado, mi presente y mi futuro brillante. Te amo desde siempre y para siempre, mi alma gemela.')">Nosotros Pequeños</button>
+    <button class="button" onclick="showModal('roblox.png', 'Jugando Roblox, específicamente Steal a Brainot, riendo y compitiendo con alegría infantil. Esos momentos de diversión me recuerdan tu espíritu juguetón y adorable. Perdóname si alguna vez tomé esos juegos a la ligera, porque en ellos veo tu esencia pura y te amo por ser tan maravillosa. Eres mi compañera perfecta en todo, mi alegría eterna.')">Roblox</button>
+    <button class="button" onclick="showModal('tus_ojos.jpg', 'Tus ojos, ventanas a tu alma hermosa y profunda, me hipnotizan con su belleza incomparable y sinceridad absoluta. Cada mirada tuya es un poema de amor y ternura infinita. Perdóname si no siempre los miré con la admiración que merecen, porque en tus ojos veo el universo entero y mi amor por ti es infinito. Eres mi luz, mi guía, mi razón de vivir.')">Tus Ojos</button>
+    <button class="button" onclick="showModal('tuyyo.jpg', 'Esta imagen de nosotros juntos captura nuestra esencia única y cautivadora. Somos la obra maestra de la creación, perfectos en cada detalle exquisito. Perdóname por cualquier imperfección en mi amor, porque dedicaré mi vida a adorarte y hacerte sentir la reina que eres. Te amo más que a las palabras pueden expresar, mi amor incomparable.')">Los Dos Juntitos</button>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Imagen">
+            <p id="modalMsg"></p>
+        </div>
+    </div>
+<script>
+        function showModal(imgSrc, message) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalMsg').innerText = message;
+            document.getElementById('myModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
